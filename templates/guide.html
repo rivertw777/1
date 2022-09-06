@@ -1,0 +1,145 @@
+<!-- 소개 페이지 -->
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- 부트스트랩 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- 아이콘 연결 -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+
+    <!-- css 연결 -->
+    <link href="static/css/styles10.css" rel="stylesheet" />
+
+    <!-- 글꼴-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
+    <style>
+        *{font-family: 'Nanum Gothic', sans-serif;}
+        input { width: 300px; padding: 5px 10px; margin: 5px 0; box-sizing: border-box; text-align: center; }
+    </style>
+</head>
+
+<body>
+<header class="header">
+    {% include 'header.html' %}
+</header>
+
+<section class="page-section">
+    <div class="container-fluid">
+        <div class="text-center">
+            <h4 class="my-3">"커피박 수거 서비스"</h4>
+            <h1 class="section-heading text-uppercase" style="color:#66594E;">COFFEE IN SEOUL<br>이용 가이드</h1>
+            <h5><br>
+            <hr class="center-hr">
+            <h4><br><br>소개<br><br></h4>
+            <img src="static/images/gintro.gif" style="box-shadow: 0 0.25rem 1rem rgba(161, 172, 184, 0.45); width:800px;">
+                <br><br>
+                <p>
+                    <span class="fa-stack">
+                    <i class="fas fa-circle fa-stack-2x" style="color:#BEDBC9"></i>
+                    <i class="fas fa-comment fa-stack-1x fa-inverse" style="color:#42261A"></i>
+                    </span>
+                    커피박 설명: 대규모 쓰레기인 커피박에 대한 설명</p>
+                <p>
+                    <span class="fa-stack">
+                    <i class="fas fa-circle fa-stack-2x" style="color:#BEDBC9"></i>
+                    <i class="fas fa-dumpster-fire fa-stack-1x fa-inverse" style="color:#42261A"></i>
+                    </span>
+                    커피박 현황: 커피박을 소각 및 매립 처리하는 과정에서 발생하는 환경 오염의 심각성 </p>
+                <p>
+                    <span class="fa-stack">
+                    <i class="fas fa-circle fa-stack-2x" style="color:#BEDBC9"></i>
+                    <i class="fas fa-recycle fa-stack-1x fa-inverse" style="color:#42261A"></i>
+                    </span>
+                    국내 커피박 순환 자원 시스템 활성화: 상호협력하여 수거 시스템으로 기대할 수 있는 효과 제시</p>
+                <p>
+                    <span class="fa-stack">
+                    <i class="fas fa-circle fa-stack-2x" style="color:#BEDBC9"></i>
+                    <i class="fas fa-thumbs-up fa-stack-1x fa-inverse" style="color:#42261A"></i>
+                    </span>
+                    커피박의 다양한 활용처: 커피박이 활용 자원이 되도록 하는 수거 시스템 필요</p>
+                <br><br>
+
+                <hr class="center-hr">
+            <h4><br><br>수거함<br><br></h4>
+            <img src="static/images/gmap.gif" style="box-shadow: 0 0.25rem 1rem rgba(161, 172, 184, 0.45); width:800px;">
+                <br><br>
+                <p>
+                    <span class="fa-stack">
+                    <i class="fas fa-circle fa-stack-2x" style="color:#BEDBC9"></i>
+                    <i class="fas fa-location-dot fa-stack-1x fa-inverse" style="color:#42261A"></i>
+                    </span>
+                    현위치: 사용자의 GPS 정보를 통해 대략적인 주소와 위도, 경도 확인</p>
+                <p>
+                    <span class="fa-stack">
+                    <i class="fas fa-circle fa-stack-2x" style="color:#BEDBC9"></i>
+                    <i class="fas fa-trash-can fa-stack-1x fa-inverse" style="color:#42261A"></i>
+                    </span>
+                    최근접 수거함: 사용자 현위치 기반 가장 가까운 수거함 확인
+                    <br>검정색 위치 기호 </p>
+                <p>
+                    <span class="fa-stack">
+                    <i class="fas fa-circle fa-stack-2x" style="color:#BEDBC9"></i>
+                    <i class="fas fa-battery-half fa-stack-1x fa-inverse" style="color:#42261A"></i>
+                    </span>
+                    포화도: 여유/보통/포화로 나누어 색깔별 포화도 확인
+                    <br>위치 기호에 마우스 포인터 올릴 시 상태 확인 가능</p>
+                <p>
+                    <span class="fa-stack">
+                    <i class="fas fa-circle fa-stack-2x" style="color:#BEDBC9"></i>
+                    <i class="fas fa-map fa-stack-1x fa-inverse" style="color:#42261A"></i>
+                    </span>
+                    근접 수거함: 근접한 수거함을 지도에서 묶어 표현해 수거함의 수 한번에 확인 가능</p>
+                <p>
+                    <span class="fa-stack">
+                    <i class="fas fa-circle fa-stack-2x" style="color:#BEDBC9"></i>
+                    <i class="fas fa-dumpster fa-stack-1x fa-inverse" style="color:#42261A"></i>
+                    </span>
+                    수거: 위치 기호 클릭 시 나타나는 입력을 눌러 임시 수거함에 무게 입력</p>
+                <br><br>
+            <hr class="center-hr">
+            <h4><br><br>내정보<br><br></h4>
+            <img src="static/images/gmyinfo.gif" style="box-shadow: 0 0.25rem 1rem rgba(161, 172, 184, 0.45); width:800px;">
+                <br><br>
+                <p>
+                    <span class="fa-stack">
+                    <i class="fas fa-circle fa-stack-2x" style="color:#BEDBC9"></i>
+                    <i class="fas fa-users fa-stack-1x fa-inverse" style="color:#42261A"></i>
+                    </span>
+                    회원가입/로그인: 커피박 수거 시스템의 원활한 관리 및 혜택 제공을 위한 사용자 관리</p>
+                <p>
+                    <span class="fa-stack">
+                    <i class="fas fa-circle fa-stack-2x" style="color:#BEDBC9"></i>
+                    <i class="fas fa-user fa-stack-1x fa-inverse" style="color:#42261A"></i>
+                    </span>
+                    고유번호: 실제 수거함 사용 시, 사용자 식별을 위한 번호 부여</p>
+                <p>
+                    <span class="fa-stack">
+                    <i class="fas fa-circle fa-stack-2x" style="color:#BEDBC9"></i>
+                    <i class="fas fa-sign-hanging fa-stack-1x fa-inverse" style="color:#42261A"></i>
+                    </span>
+                    등급제: 월단위 커피박 수거량에 따라 친환경 인증 안내판 지급</p>
+                <p>
+                    <span class="fa-stack">
+                    <i class="fas fa-circle fa-stack-2x" style="color:#BEDBC9"></i>
+                    <i class="fas fa-coins fa-stack-1x fa-inverse" style="color:#42261A"></i>
+                    </span>
+                    마일리지: 커피박을 재활용한 만큼 마일리지 지급해 월말에 지역화폐로 일괄 제공</p>
+                <br><br>
+        </div>
+    </div>
+    </section>
+</div>
+
+<footer class="footer">
+    {% include 'footer.html' %}
+</footer>
+</body>
+</html>

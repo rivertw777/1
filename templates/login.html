@@ -1,0 +1,52 @@
+<!-- 로그인 페이지 -->
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <script>
+            alert('{{messages[-1]}}')
+        </script>
+    {% endif %}
+{% endwith %}
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <link href="static/css/styles10.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header class="header">
+            {% include 'header.html' %}
+        </header>
+
+        <div class="login">
+            <div class="login_wrap">
+                <form method="POST">
+                    {{form.csrf_token}}
+                    <div class="login_id">
+                      <span class="id_title">아이디</span>
+                        <input type="text" class="login_id_input" placeholder="아이디를 입력해주세요." name="user_id" autocomplete="off"/>
+                    </div>
+                    <div class="login_pw">
+                        <span class="pw_title">비밀번호</span>
+                        <input type="text" class="login_pw_input" placeholder="비밀번호를 입력해주세요." name="user_pw" autocomplete="off"/>
+                    </div>
+                    <div class="login_btn">
+                        <button class="login_btn_btn">로그인</button>
+                    </div>
+                    <div class="login_btn">
+                        <button class="login_btn_btn" >
+                            <a href="/signup">
+                                회원가입
+                            </a>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <footer class="footer">
+            {% include 'footer.html' %}
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,100 @@
+<!-- 소개 페이지 -->
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- 부트스트랩 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- 아이콘 연결 -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+
+    <!-- css 연결 -->
+    <link href="static/css/styles10.css" rel="stylesheet" />
+
+    <!-- 글꼴-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
+    <style>
+        *{font-family: 'Nanum Gothic', sans-serif;}
+        input { width: 300px; padding: 5px 10px; margin: 5px 0; box-sizing: border-box; text-align: center; }
+    </style>
+</head>
+
+<body>
+<header class="header">
+    {% include 'header.html' %}
+</header>
+
+<section class="page-section">
+    <div class="container-fluid">
+        <div class="text-center">
+            <h4 class="my-3">"커피박 수거 서비스"</h4>
+            <h1 class="section-heading text-uppercase" style="color:#66594E;">COFFEE IN SEOUL</h1><br><br>
+            <img src="static/images/globe.png" style="width:100px;">
+            <h5><br><br>
+                <span style="color:#0098D4;">지구</span>를 위해<br><br>
+                <span style="color:#4B8B3B;">환경</span>을 위해<br><br>
+                <span style="color:#2F210D;">커피박 재활용</span> 동참해요<br><br></h5>
+            <a class="btn btn-primary btn-lg" href="#service">Go!</a><br><br>
+            <hr class="center-hr">
+            <div id="service">
+            <h4><br><br>커피박<br><br></h4>
+            <img src="static/images/ground-coffee.png" style="width:100px;">
+            <img src="static/images/coffee-bag.png" style="width:100px;">
+                <p><br>원두 한 알에서 <span class="text-pink">커피로 추출되는 비중은 단 0.2%</span>이며,<br>
+                아메리카노 한 잔(약 300ml)을 만들 때마다<br>
+                약 15g의 커피박이 발생합니다
+            </p>
+                <p>2019년 기준<br>국내에서 발생한 커피박만 <span class="text-pink">약 14만 9,038톤</span></p><br><br>
+
+                <hr class="center-hr">
+            <h4><br><br>커피박 현황<br><br></h4>
+            <img src="static/images/fire.png" style="width:100px;">
+            <img src="static/images/shovel.png" style="width:100px;">
+            <img src="static/images/carbon-dioxide.png" style="width:100px;">
+            <p><br>커피 전문점 등에서 배출되는 커피박은<br>
+                일반적으로 종량제 봉투에 담아 배출되어 <span class="text-pink">소각 및 매립 처리</span>됩니다</p>
+                <p>커피박을 소각할 때 발생한 <span class="text-pink">온실가스는 약 5만 374톤(1톤당 약 338kg)</span>으로<br>
+            이는 소나무 7,696그루가 사라진 것과 맞먹는 양입니다<br>
+                    매립 시, 카페인 성분으로 <span class="text-pink">토양 오염이 발생</span>하며<br>
+            생활폐기물 쓰레기봉투 가격으로만 약 41억원이 사용되는 것으로 추정됩니다</p><br><br>
+                <hr class="center-hr">
+            <h4><br><br>국내 커피박 순환 자원 시스템 활성화<br><br></h4>
+            <img src="static/images/tri.png" style="width:300px;">
+                <p><br><span class="text-pink">정부, 생산기관, 커피 전문점</span>의 상호협력으로<br>
+                <span class="text-pink">커피박 순환 사이클</span> 구현이 가능합니다</p>
+                <p>커피박의 <span class="text-pink">안정적인 수급</span>과 <span class="text-pink">인식 개선</span>을 통해
+                <br>커피박 순환 시스템이 활발하게 운영될 수 있습니다</p><br>
+                            <hr class="center-hr">
+            <h4><br><br>커피박의 다양한 활용처<br><br></h4>
+            <img src="static/images/oil.png" style="width:100px;">
+            <img src="static/images/feed.png" style="width:100px;">
+            <img src="static/images/brick.png" style="width:100px;">
+            <p><br>바이오에너지, 사료, 벽돌, 연필, 화분 등<br>
+                <span class="text-pink">다양한 방안으로 활용할 수 있는 커피박!</span></p>
+            <p>커피박 산업의 활성화를 위해<br>
+                커피박이 원활하게 활용되도록 하는 수거시스템뿐만 아니라<br>
+                <span class="text-pink">여러분의 참여</span>가 필요합니다!</p><br>
+            {%if session.get('user_id')%}
+            <a class="btn btn-primary btn-xl" href="/map">커피박 수거 참여하기</a>
+            {% else %}
+            <a class="btn btn-primary btn-xl" href="/login">커피박 수거 참여하기</a>
+            {% endif %}
+
+                </div>
+        </div>
+    </div>
+    </section>
+</div>
+
+<footer class="footer">
+    {% include 'footer.html' %}
+</footer>
+</body>
+</html>

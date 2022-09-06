@@ -1,0 +1,70 @@
+<!-- 회원가입 페이지 -->
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <script>
+            alert('{{messages[-1]}}')
+        </script>
+    {% endif %}
+{% endwith %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- 부트스트랩 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- 아이콘 연결 -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+
+    <!-- css 연결 -->
+    <link href="static/css/styles10.css" rel="stylesheet" />
+
+    <!-- 글꼴-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
+    <style>
+        *{font-family: 'Nanum Gothic', sans-serif;}
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        {% include 'header.html' %}
+    </header>
+
+    <div class="sign">
+        <div class="sign_wrap">
+            <h3>회원가입</h3>
+            <form method="POST">
+                {{form.csrf_token}}
+                <div class="sign_content">
+                    <div class="id">
+                        <p class="id_title">아이디</p>
+                        <input type="text" class="id_input" placeholder="사용할 아이디를 입력해주세요." name="user_id" autocomplete="off"/>
+                    </div>
+                    <div class="pw">
+                        <p class="pw_title">비밀번호</p>
+                        <input type="text" class="pw_input" placeholder="비밀번호를 입력해주세요." name="user_pw" autocomplete="off"/>
+                        </div>
+                    <div class="pw_check">
+                        <p class="pw_check_title">비밀번호 확인</p>
+                        <input type="text" class="pw_check_input" placeholder="비밀번호를 한번 더 입력해주세요." name="re_pw" autocomplete="off"/>
+                    </div>
+                    <div class="btn">
+                        <button class="signbtn">가입하기</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        {% include 'footer.html' %}
+    </footer>
+</body>
+</html>

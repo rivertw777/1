@@ -1,0 +1,105 @@
+<!-- 수거함 페이지 -->
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <script>
+            alert('{{messages[-1]}}')
+        </script>
+    {% endif %}
+{% endwith %}
+<!doctype html>
+<html lang="ko">
+<head>
+</head>
+
+<body>
+<header class="header">
+  {% include 'header.html' %}
+</header>
+
+<div class="container">
+  <div class="p-4 pt-5">
+    <div class="row text-center">
+    <div id='map' class="col-md-9">
+        {{map|safe}}
+    </div>
+
+    <div id="transaction" class="col-md-3">
+      <div class="col-md-12 col-lg-12 order-12 mb-12">
+        <div class="card h-100">
+          <div class="card-header d-flex align-items-center justify-content-between">
+            <h5 class="card-title m-0 me-2">설명</h5>
+          </div>
+
+          <div class="card-body">
+            <ul class="p-0 m-0" >
+              <li class="d-flex mb-4 pb-1" >
+                <div class="avatar flex-shrink-0 me-3">
+                  <i class="fa-solid fa-location-dot" style="color:blue;"></i>
+                </div>
+                <div class="w-100 flex-wrap align-items-center justify-content-between gap-2">
+                  <div class="me-2">
+                    <small class="text-muted d-block mb-1">현 위치</small>
+                    <h6 class="mb-0">{{address}}{{(y1,x1)}}</h6>
+                  </div>
+                </div>
+              </li>
+              <li class="d-flex mb-4 pb-1">
+                <div class="avatar flex-shrink-0 me-3">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="w-100 flex-wrap align-items-center justify-content-between gap-2">
+                  <div class="me-2">
+                    <small class="text-muted d-block mb-1">가장 가까운 수거함</small>
+                    <h6 class="mb-0">{{place}}<br>
+                      ({{(short//0.001)*0.001}}km)</h6>
+                  </div>
+                </div>
+              </li>
+              <li class="d-flex mb-4 pb-1">
+                <div class="avatar flex-shrink-0 me-3">
+                  <i class="fa-solid fa-location-dot" style="color:#9acd32;"></i>
+                </div>
+                <div class="w-100 flex-wrap align-items-center justify-content-between gap-2">
+                  <div class="me-2">
+                    <small class="text-muted d-block mb-1">여유</small>
+                    <h6 class="mb-0">70% 이하</h6>
+                  </div>
+                </div>
+              </li>
+              <li class="d-flex mb-4 pb-1">
+                <div class="avatar flex-shrink-0 me-3">
+                  <i class="fa-solid fa-location-dot" style="color:orange;"></i>
+                </div>
+                <div class="w-100 flex-wrap align-items-center justify-content-between gap-2">
+                  <div class="me-2">
+                    <small class="text-muted d-block mb-1">보통</small>
+                    <h6 class="mb-0">70% 초과</h6>
+                  </div>
+                </div>
+              </li>
+              <li class="d-flex mb-4 pb-1">
+                <div class="avatar flex-shrink-0 me-3">
+                  <i class="fa-solid fa-location-dot" style="color:red;"></i>
+                </div>
+                <div class="w-100 flex-wrap align-items-center justify-content-between gap-2">
+                  <div class="me-2">
+                    <small class="text-muted d-block mb-1">포화</small>
+                    <h6 class="mb-0">90% 이상</h6>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  {% include 'footer.html' %}
+</footer>
+</body>
+</html>

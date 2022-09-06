@@ -1,0 +1,70 @@
+<!-- 커피박 입력 페이지 -->
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- 부트스트랩 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- 아이콘 연결 -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+
+    <!-- css 연결 -->
+    <link href="static/css/styles10.css" rel="stylesheet" />
+
+    <!-- 글꼴-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
+    <style>
+        *{font-family: 'Nanum Gothic', sans-serif;}
+        .card {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          min-width: 0;
+          word-wrap: break-word;
+          background-color: #fff;
+          background-clip: border-box;
+          border: 1px solid rgba(0, 0, 0, 0.125);
+          border-radius: 0.25rem;
+          box-shadow: 0 0.25rem 1rem rgba(161, 172, 184, 0.45);
+        }
+    </style>
+</head>
+
+<body>
+<div class="container-fluid">
+<div class="col-md-4 col-md-offset-4">
+<div class="card text-center">
+  <div class="card-header">
+    <span class="fa-stack fa-2x">
+        <i class="fas fa-circle fa-stack-2x" style="color:#BEDBC9"></i>
+        <i class="fas fa-weight-scale fa-stack-1x fa-inverse" style="color:#42261A"></i>
+    </span>
+  </div>
+  <div class="card-body">
+    {%for box in Box %}
+      {% if box.box_id == name %}
+        <h5 class="card-title">수거함 ID: {{name}}<br>포화도 : {{box.grade}}%</h5>
+        <form method="POST">
+            {{form.csrf_token}}
+            <input type = "text" name="mileage" placeholder="커피박을 올려주세요.">
+            <input type= "submit" value="입력">
+        </form>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="card-footer text-muted">
+      <span class="text-hi">임시 수거함</span> 역할을 하는 입력란입니다
+  </div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
